@@ -54,10 +54,9 @@ public class ListaUsuarios {
 		bw.write("DNI: " + dni + "\r\n");
 		bw.write("Dirección: " + direccion + "\r\n");
 		bw.write("Teléfono: " + telefono + "\r\n");
+		bw.write("----------------\r\n");
 		
 		System.out.println("\nUsuario dado de alta correctamente\n");
-		
-		
 		
 		}catch(FileNotFoundException e) {
 			e.printStackTrace();
