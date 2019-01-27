@@ -38,8 +38,10 @@ public class ListaUsuarios {
 		String direccion = sc.nextLine();
 		System.out.println("Introduzca un teléfono de contacto");
 		String telefono = sc.nextLine();
+		System.out.println("Introduzca un número de cuenta");
+		String cuenta = sc.nextLine();
 		
-		User user = new User(nombre, apellido, correo, dni, direccion, telefono);
+		User user = new User(nombre, apellido, correo, dni, direccion, telefono, cuenta);
 		lUsuarios.add(user);
 		
 		File file = new File("./usuarios.txt");
@@ -80,6 +82,21 @@ public class ListaUsuarios {
 	void mostrarTodosUsuarios() {
 		for(int i=0; i<lUsuarios.size(); i++) {
 			lUsuarios.get(i).mostrarUsuarios();
+		}
+	}
+	
+	void zona1Adoptar() {
+		FileWriter fw = null;
+		BufferedWriter bw = null;
+	
+		try {
+			System.out.println("Introducir un nombre: ");
+			String nombre = sc.nextLine();
+			System.out.println("Introduzca un apellido: ");
+			String apellido = sc.nextLine();
+			
+		}catch() {
+			
 		}
 	}
 	

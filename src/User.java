@@ -6,18 +6,19 @@ public class User {
 	private String dni;
 	private String direccion;
 	private String telefono;
+	private String cuenta;
 	
 	
-	User( String nombre, String apellido, String correo, String dni, String direccion, String telefono){
+	User( String nombre, String apellido, String correo, String dni, String direccion, String telefono, String cuenta){
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.correo = correo;
 		this.dni = dni;
 		this.direccion = direccion;
 		this.telefono = telefono;
+		this.cuenta = cuenta;
 		
 	}
-	
 
 	public String getNombre() {
 		return nombre;
@@ -56,6 +57,14 @@ public class User {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+	public String getCuenta() {
+		return cuenta;
+	}
+
+
+	public void setCuenta(String cuenta) {
+		this.cuenta = cuenta;
+	}
 	
 	void mostrarUsuarios() {
 		System.out.println("Nombre: " + nombre);
@@ -64,6 +73,7 @@ public class User {
 		System.out.println("dni: " + dni);
 		System.out.println("Dirección: " + direccion);
 		System.out.println("Teléfono: " + telefono);
+		System.out.println("Cuenta " + cuenta);
 	}
 		
 }
