@@ -24,13 +24,12 @@ public class ListaUsuarios {
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 		
-		
 		try {
 		System.out.println("Introducir un nombre: ");
 		String nombre = sc.nextLine();
 		System.out.println("Introduzca un apellido: ");
 		String apellido = sc.nextLine();
-		System.out.println("Introduzca un correo");
+		System.out.println("Introduzca un correo electrónico");
 		String correo = sc.nextLine();
 		System.out.println("Introduzca el DNI");
 		String dni = sc.nextLine();
@@ -44,7 +43,7 @@ public class ListaUsuarios {
 		User user = new User(nombre, apellido, correo, dni, direccion, telefono, cuenta);
 		lUsuarios.add(user);
 		
-		File file = new File("./usuarios.txt");
+		File file = new File("./Usuarios.txt");
 		if (!file.exists()) {
 			file.createNewFile();
 		}
@@ -94,9 +93,47 @@ public class ListaUsuarios {
 			String nombre = sc.nextLine();
 			System.out.println("Introduzca un apellido: ");
 			String apellido = sc.nextLine();
+			System.out.println("Introduzca un correo electrónico");
+			String correo = sc.nextLine();
+			System.out.println("Introduzca un teléfono de contacto");
+			String telefono = sc.nextLine();
 			
-		}catch() {
 			
+			
+			User user = new User(nombre, apellido, correo, telefono);
+			
+			lUsuarios.add(user);
+			
+			File file = new File("./ADOPTAR_Zona1.txt");
+			if(!file.exists()) {
+				file.createNewFile();
+			}
+			fw = new FileWriter(file.getAbsoluteFile(), true);
+			bw = new BufferedWriter(fw);
+			
+			bw.write("Nombre: " + nombre + "\r\n");
+			bw.write("Apellido: " + apellido + "\r\n");
+			bw.write("Correo: " + correo + "\r\n");
+			bw.write("Teléfono: " + telefono + "\r\n");
+			bw.write("Nombre: " + nombre + "\r\n");
+			bw.write("----------------\r\n");
+			
+		}catch(FileNotFoundException e) {
+			e.printStackTrace();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(bw != null) {
+					bw.close();
+				}
+				if(fw != null) {
+					fw.close();
+				}
+				
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	

@@ -19,6 +19,13 @@ public class User {
 		this.cuenta = cuenta;
 		
 	}
+	
+	User(String nombre, String apellido, String correo, String telefono){
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.telefono = telefono;
+	}
 
 	public String getNombre() {
 		return nombre;
