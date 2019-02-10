@@ -20,11 +20,7 @@ public class ListaUsuarios {
 	
 	Scanner sc = new Scanner(System.in);
 	
-	void addUser() {
-		FileWriter fw = null;
-		BufferedWriter bw = null;
-		
-		try {
+	private User createUser() {
 		System.out.println("Introducir un nombre: ");
 		String nombre = sc.nextLine();
 		System.out.println("Introduzca un apellido: ");
@@ -39,43 +35,113 @@ public class ListaUsuarios {
 		String telefono = sc.nextLine();
 		System.out.println("Introduzca un número de cuenta");
 		String cuenta = sc.nextLine();
+		System.out.println("Introduzca el número de zona");
+		String zona = sc.nextLine();
+		System.out.println("IElegir acción");
+		String accion = sc.nextLine();
 		
-		User user = new User(nombre, apellido, correo, dni, direccion, telefono, cuenta);
+		return new User(nombre, apellido, correo, dni, direccion, telefono, cuenta, zona, accion);
+	}
+	
+	void addUser() {
+		FileWriter fw1 = null;
+		BufferedWriter bw1 = null;
+		FileWriter fw2 = null;
+		BufferedWriter bw2 = null;
+		FileWriter fw3 = null;
+		BufferedWriter bw3 = null;
+		
+		try {
+		User user = createUser();
 		lUsuarios.add(user);
 		
-		File file = new File("./Usuarios.txt");
-		if (!file.exists()) {
-			file.createNewFile();
+		File fileGeneral = new File("./Usuarios.txt");
+		File fileZona1Adoptar = new File ("./AdoptarZona1.txt");
+		File fileZona2Adoptar = new File ("./AdoptarZona2.txt");
+		/*
+		 * Se agregan los datos al fichero general
+		 */
+		if (!fileGeneral.exists()) {
+			fileGeneral.createNewFile();
+			
 		}
-		fw = new FileWriter(file.getAbsoluteFile(), true);
-		bw = new BufferedWriter(fw);
-		bw.write("Nombre: " + nombre + "\r\n");
-		bw.write("Apellido: " + apellido + "\r\n");
-		bw.write("Correo: " + correo + "\r\n");
-		bw.write("DNI: " + dni + "\r\n");
-		bw.write("Dirección: " + direccion + "\r\n");
-		bw.write("Teléfono: " + telefono + "\r\n");
-		bw.write("----------------\r\n");
+		fw1 = new FileWriter(fileGeneral.getAbsoluteFile(), true);
+		bw1 = new BufferedWriter(fw1);
+		bw1.write("Nombre: " + user.getNombre() + "\r\n");
+		bw1.write("Apellido: " + user.getApellido() + "\r\n");
+		bw1.write("Correo: " + user.getCorreo()+ "\r\n");
+		bw1.write("DNI: " + user.getCuenta() + "\r\n");
+		bw1.write("Dirección: " + user.getDireccion() + "\r\n");
+		bw1.write("Teléfono: " + user.getTelefono() + "\r\n");
+		bw1.write("Cuenta: " + user.getCuenta() + "\r\n");
+		bw1.write("Zona: " + user.getZona() + "\r\n");
+		bw1.write("Acción: " + user.getAccion() + "\r\n");
+		
+		bw1.write("----------------\r\n");
+		
+		/*
+		 * Se crean los diferentes ficheros por zona y por accion del usuario
+		 */
+	
+		/*
+		 * Zona1 ADOPTAR
+		 */
+		
+		
+		if(!fileZona1Adoptar.exists()) {
+			fileZona1Adoptar.createNewFile();
+		}
+		fw2 = new FileWriter(fileZona1Adoptar.getAbsoluteFile(), true);
+		bw2 = new BufferedWriter(fw2);
+		
+		bw2.write("Nombre: " + user.getNombre() + "\r\n");
+		bw2.write("Apellido: " + user.getApellido() + "\r\n");
+		bw2.write("Correo: " + user.getCorreo() + "\r\n");
+		bw2.write("Teléfono: " + user.getTelefono() + "\r\n");
+		bw2.write("----------------\r\n");
+		
+		/*
+		 * Zona2 ADOPTAR
+		 */
+		
+			
+		if(!fileZona2Adoptar.exists()) {
+			fileZona2Adoptar.createNewFile();
+		}
+		fw3 = new FileWriter(fileZona2Adoptar.getAbsoluteFile(), true);
+		bw3 = new BufferedWriter(fw3);
+		
+		bw3.write("Nombre: " + user.getNombre() + "\r\n");
+		bw3.write("Apellido: " + user.getApellido() + "\r\n");
+		bw3.write("Correo: " + user.getCorreo() + "\r\n");
+		bw3.write("Teléfono: " + user.getTelefono() + "\r\n");
+		bw3.write("----------------\r\n");
+		
 		
 		System.out.println("\nUsuario dado de alta correctamente\n");
-		
-		}catch(FileNotFoundException e) {
+				
+		}
+				
+		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}catch(IOException e) {
 			e.printStackTrace();	
 		}finally {
 			try {
-				if(bw != null) {
-					bw.close();
+				if(bw1 != null & bw2 != null & bw3 != null) {
+					bw1.close();
+					bw2.close();
+					bw3.close();
 				}
-				if(fw != null) {
-					fw.close();
+				if(fw1 != null & fw2 != null & fw3 != null) {
+					fw1.close();
+					fw2.close();
+					fw3.close();
 				}
 			}catch(IOException ex) {
 				ex.printStackTrace();
 			}
-		}
-		
+		}	
 	}
 	
 	void mostrarTodosUsuarios() {
@@ -83,58 +149,5 @@ public class ListaUsuarios {
 			lUsuarios.get(i).mostrarUsuarios();
 		}
 	}
-	
-	void zona1Adoptar() {
-		FileWriter fw = null;
-		BufferedWriter bw = null;
-	
-		try {
-			System.out.println("Introducir un nombre: ");
-			String nombre = sc.nextLine();
-			System.out.println("Introduzca un apellido: ");
-			String apellido = sc.nextLine();
-			System.out.println("Introduzca un correo electrónico");
-			String correo = sc.nextLine();
-			System.out.println("Introduzca un teléfono de contacto");
-			String telefono = sc.nextLine();
-			
-			
-			
-			User user = new User(nombre, apellido, correo, telefono);
-			
-			lUsuarios.add(user);
-			
-			File file = new File("./ADOPTAR_Zona1.txt");
-			if(!file.exists()) {
-				file.createNewFile();
-			}
-			fw = new FileWriter(file.getAbsoluteFile(), true);
-			bw = new BufferedWriter(fw);
-			
-			bw.write("Nombre: " + nombre + "\r\n");
-			bw.write("Apellido: " + apellido + "\r\n");
-			bw.write("Correo: " + correo + "\r\n");
-			bw.write("Teléfono: " + telefono + "\r\n");
-			bw.write("Nombre: " + nombre + "\r\n");
-			bw.write("----------------\r\n");
-			
-		}catch(FileNotFoundException e) {
-			e.printStackTrace();
-		}catch(IOException e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				if(bw != null) {
-					bw.close();
-				}
-				if(fw != null) {
-					fw.close();
-				}
-				
-			}catch(IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-	
+		
 }

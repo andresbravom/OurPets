@@ -2,5 +2,4 @@ Nombre: a
 Apellido: a
 Correo: a
 Teléfono: a
-Nombre: a
 ----------------
