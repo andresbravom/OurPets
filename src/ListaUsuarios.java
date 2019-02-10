@@ -50,6 +50,8 @@ public class ListaUsuarios {
 		BufferedWriter bw2 = null;
 		FileWriter fw3 = null;
 		BufferedWriter bw3 = null;
+		FileWriter fw4 = null;
+		BufferedWriter bw4 = null;
 		
 		try {
 		User user = createUser();
@@ -57,7 +59,8 @@ public class ListaUsuarios {
 		
 		File fileGeneral = new File("./Usuarios.txt");
 		File fileZona1Adoptar = new File ("./AdoptarZona1.txt");
-		File fileZona2Adoptar = new File ("./AdoptarZona2.txt");
+		File fileZona1Apadrinar = new File ("./ApadrinarZona1.txt");
+		File fileZona1Pasear = new File ("./PasearZona1.txt");
 		/*
 		 * Se agregan los datos al fichero general
 		 */
@@ -75,19 +78,12 @@ public class ListaUsuarios {
 		bw1.write("Teléfono: " + user.getTelefono() + "\r\n");
 		bw1.write("Cuenta: " + user.getCuenta() + "\r\n");
 		bw1.write("Zona: " + user.getZona() + "\r\n");
-		bw1.write("Acción: " + user.getAccion() + "\r\n");
-		
+		bw1.write("Acción: " + user.getAccion() + "\r\n");	
 		bw1.write("----------------\r\n");
-		
-		/*
-		 * Se crean los diferentes ficheros por zona y por accion del usuario
-		 */
 	
 		/*
 		 * Zona1 ADOPTAR
 		 */
-		
-		
 		if(!fileZona1Adoptar.exists()) {
 			fileZona1Adoptar.createNewFile();
 		}
@@ -101,14 +97,12 @@ public class ListaUsuarios {
 		bw2.write("----------------\r\n");
 		
 		/*
-		 * Zona2 ADOPTAR
+		 * Zona1 APADRINAR
 		 */
-		
-			
-		if(!fileZona2Adoptar.exists()) {
-			fileZona2Adoptar.createNewFile();
+		if(!fileZona1Apadrinar.exists()) {
+			fileZona1Apadrinar.createNewFile();
 		}
-		fw3 = new FileWriter(fileZona2Adoptar.getAbsoluteFile(), true);
+		fw3 = new FileWriter(fileZona1Apadrinar.getAbsoluteFile(), true);
 		bw3 = new BufferedWriter(fw3);
 		
 		bw3.write("Nombre: " + user.getNombre() + "\r\n");
@@ -117,6 +111,20 @@ public class ListaUsuarios {
 		bw3.write("Teléfono: " + user.getTelefono() + "\r\n");
 		bw3.write("----------------\r\n");
 		
+		/*
+		 * Zona1 PASEAR
+		 */
+		if(!fileZona1Pasear.exists()) {
+			fileZona1Pasear.createNewFile();
+		}
+		fw4 = new FileWriter(fileZona1Pasear.getAbsoluteFile(), true);
+		bw4 = new BufferedWriter(fw4);
+		
+		bw4.write("Nombre: " + user.getNombre() + "\r\n");
+		bw4.write("Apellido: " + user.getApellido() + "\r\n");
+		bw4.write("Correo: " + user.getCorreo() + "\r\n");
+		bw4.write("Teléfono: " + user.getTelefono() + "\r\n");
+		bw4.write("----------------\r\n");
 		
 		System.out.println("\nUsuario dado de alta correctamente\n");
 				
@@ -128,26 +136,26 @@ public class ListaUsuarios {
 			e.printStackTrace();	
 		}finally {
 			try {
-				if(bw1 != null & bw2 != null & bw3 != null) {
+				if(bw1 != null & bw2 != null & bw3 != null & bw4 != null) {
 					bw1.close();
 					bw2.close();
 					bw3.close();
+					bw4.close();
 				}
-				if(fw1 != null & fw2 != null & fw3 != null) {
+				if(fw1 != null & fw2 != null & fw3 != null & fw4 != null) {
 					fw1.close();
 					fw2.close();
 					fw3.close();
+					fw4.close();
 				}
 			}catch(IOException ex) {
 				ex.printStackTrace();
 			}
 		}	
 	}
-	
 	void mostrarTodosUsuarios() {
 		for(int i=0; i<lUsuarios.size(); i++) {
 			lUsuarios.get(i).mostrarUsuarios();
 		}
-	}
-		
+	}		
 }

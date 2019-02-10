@@ -1,10 +1,5 @@
 Nombre: a
 Apellido: a
 Correo: a
-DNI: a
-Dirección: a
 Teléfono: a
-Cuenta: a
-Zona: a
-Acción: a
 ----------------
