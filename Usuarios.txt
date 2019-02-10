@@ -8,3 +8,13 @@ Cuenta: a
 Zona: a
 Acción: a
 ----------------
+Nombre: b
+Apellido: b
+Correo: b
+DNI: b
+Dirección: b
+Teléfono: b
+Cuenta: b
+Zona: b
+Acción: b
+----------------

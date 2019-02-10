@@ -3,3 +3,8 @@ Apellido: a
 Correo: a
 Teléfono: a
 ----------------
+Nombre: b
+Apellido: b
+Correo: b
+Teléfono: b
+----------------

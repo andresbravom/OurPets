@@ -17,6 +17,7 @@ public class ListaUsuarios {
 	public void setlUsuarios(ArrayList<User> lUsuarios) {
 		this.lUsuarios = lUsuarios;
 	}
+	static User actualUser;
 	
 	Scanner sc = new Scanner(System.in);
 	
@@ -25,19 +26,19 @@ public class ListaUsuarios {
 		String nombre = sc.nextLine();
 		System.out.println("Introduzca un apellido: ");
 		String apellido = sc.nextLine();
-		System.out.println("Introduzca un correo electrónico");
+		System.out.println("Introduzca un correo electrónico: ");
 		String correo = sc.nextLine();
-		System.out.println("Introduzca el DNI");
+		System.out.println("Introduzca el DNI: ");
 		String dni = sc.nextLine();
-		System.out.println("Introduzca la dirección");
+		System.out.println("Introduzca la dirección: ");
 		String direccion = sc.nextLine();
-		System.out.println("Introduzca un teléfono de contacto");
+		System.out.println("Introduzca un teléfono de contacto: ");
 		String telefono = sc.nextLine();
-		System.out.println("Introduzca un número de cuenta");
+		System.out.println("Introduzca un número de cuenta: ");
 		String cuenta = sc.nextLine();
-		System.out.println("Introduzca el número de zona");
+		System.out.println("Introduzca el número de zona: ");
 		String zona = sc.nextLine();
-		System.out.println("IElegir acción");
+		System.out.println("Elegir una acción: ");
 		String accion = sc.nextLine();
 		
 		return new User(nombre, apellido, correo, dni, direccion, telefono, cuenta, zona, accion);
@@ -61,8 +62,9 @@ public class ListaUsuarios {
 		File fileZona1Adoptar = new File ("./AdoptarZona1.txt");
 		File fileZona1Apadrinar = new File ("./ApadrinarZona1.txt");
 		File fileZona1Pasear = new File ("./PasearZona1.txt");
+		
 		/*
-		 * Se agregan los datos al fichero general
+		 * FICHERO GENERAL
 		 */
 		if (!fileGeneral.exists()) {
 			fileGeneral.createNewFile();
@@ -157,5 +159,8 @@ public class ListaUsuarios {
 		for(int i=0; i<lUsuarios.size(); i++) {
 			lUsuarios.get(i).mostrarUsuarios();
 		}
-	}		
+	}
+	
+	
+	
 }
