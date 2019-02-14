@@ -39,20 +39,17 @@ public class ListaUsuarios {
 		System.out.println("Introduzca el número de zona: ");
 		String zona = sc.nextLine();
 		System.out.println("Elegir una acción: ");
-		String accion = sc.nextLine();
+		int accion = sc.nextInt();
 		
 		return new User(nombre, apellido, correo, dni, direccion, telefono, cuenta, zona, accion);
 	}
 	
 	void addUser() {
 		FileWriter fw1 = null;
-		BufferedWriter bw1 = null;
 		FileWriter fw2 = null;
-		BufferedWriter bw2 = null;
 		FileWriter fw3 = null;
-		BufferedWriter bw3 = null;
 		FileWriter fw4 = null;
-		BufferedWriter bw4 = null;
+	
 		
 		try {
 		User user = createUser();
@@ -66,70 +63,67 @@ public class ListaUsuarios {
 		/*
 		 * FICHERO GENERAL
 		 */
-		if (!fileGeneral.exists()) {
-			fileGeneral.createNewFile();
-			
-		}
+		
 		fw1 = new FileWriter(fileGeneral.getAbsoluteFile(), true);
-		bw1 = new BufferedWriter(fw1);
-		bw1.write("Nombre: " + user.getNombre() + "\r\n");
-		bw1.write("Apellido: " + user.getApellido() + "\r\n");
-		bw1.write("Correo: " + user.getCorreo()+ "\r\n");
-		bw1.write("DNI: " + user.getCuenta() + "\r\n");
-		bw1.write("Dirección: " + user.getDireccion() + "\r\n");
-		bw1.write("Teléfono: " + user.getTelefono() + "\r\n");
-		bw1.write("Cuenta: " + user.getCuenta() + "\r\n");
-		bw1.write("Zona: " + user.getZona() + "\r\n");
-		bw1.write("Acción: " + user.getAccion() + "\r\n");	
-		bw1.write("----------------\r\n");
-	
-		/*
-		 * Zona1 ADOPTAR
-		 */
-		if(!fileZona1Adoptar.exists()) {
-			fileZona1Adoptar.createNewFile();
-		}
+		
+		fw1.write("Nombre: " + user.getNombre() + "\r\n");
+		fw1.write("Apellido: " + user.getApellido() + "\r\n");
+		fw1.write("Correo: " + user.getCorreo()+ "\r\n");
+		fw1.write("DNI: " + user.getCuenta() + "\r\n");
+		fw1.write("Dirección: " + user.getDireccion() + "\r\n");
+		fw1.write("Teléfono: " + user.getTelefono() + "\r\n");
+		fw1.write("Cuenta: " + user.getCuenta() + "\r\n");
+		fw1.write("Zona: " + user.getZona() + "\r\n");
+		fw1.write("Acción: " + user.getAccion() + "\r\n");	
+		fw1.write("----------------\r\n");
+		fw1.close();
+		
+		switch (user.getAccion()) {
+
+		case 1:
 		fw2 = new FileWriter(fileZona1Adoptar.getAbsoluteFile(), true);
-		bw2 = new BufferedWriter(fw2);
+
+		fw2.write("Nombre: " + user.getNombre() + "\r\n");
+		fw2.write("Apellido: " + user.getApellido() + "\r\n");
+		fw2.write("Correo: " + user.getCorreo() + "\r\n");
+		fw2.write("Teléfono: " + user.getTelefono() + "\r\n");
+		fw2.write("----------------\r\n");
+		fw2.close();
 		
-		bw2.write("Nombre: " + user.getNombre() + "\r\n");
-		bw2.write("Apellido: " + user.getApellido() + "\r\n");
-		bw2.write("Correo: " + user.getCorreo() + "\r\n");
-		bw2.write("Teléfono: " + user.getTelefono() + "\r\n");
-		bw2.write("----------------\r\n");
+		break;
 		
-		/*
-		 * Zona1 APADRINAR
-		 */
-		if(!fileZona1Apadrinar.exists()) {
-			fileZona1Apadrinar.createNewFile();
-		}
+		case 2:
+		
 		fw3 = new FileWriter(fileZona1Apadrinar.getAbsoluteFile(), true);
-		bw3 = new BufferedWriter(fw3);
 		
-		bw3.write("Nombre: " + user.getNombre() + "\r\n");
-		bw3.write("Apellido: " + user.getApellido() + "\r\n");
-		bw3.write("Correo: " + user.getCorreo() + "\r\n");
-		bw3.write("Teléfono: " + user.getTelefono() + "\r\n");
-		bw3.write("----------------\r\n");
 		
-		/*
-		 * Zona1 PASEAR
-		 */
-		if(!fileZona1Pasear.exists()) {
-			fileZona1Pasear.createNewFile();
-		}
+		fw3.write("Nombre: " + user.getNombre() + "\r\n");
+		fw3.write("Apellido: " + user.getApellido() + "\r\n");
+		fw3.write("Correo: " + user.getCorreo() + "\r\n");
+		fw3.write("Teléfono: " + user.getTelefono() + "\r\n");
+		fw3.write("----------------\r\n");
+		fw3.close();
+		break;
+
+		case 3:
+		
 		fw4 = new FileWriter(fileZona1Pasear.getAbsoluteFile(), true);
-		bw4 = new BufferedWriter(fw4);
 		
-		bw4.write("Nombre: " + user.getNombre() + "\r\n");
-		bw4.write("Apellido: " + user.getApellido() + "\r\n");
-		bw4.write("Correo: " + user.getCorreo() + "\r\n");
-		bw4.write("Teléfono: " + user.getTelefono() + "\r\n");
-		bw4.write("----------------\r\n");
 		
+		fw4.write("Nombre: " + user.getNombre() + "\r\n");
+		fw4.write("Apellido: " + user.getApellido() + "\r\n");
+		fw4.write("Correo: " + user.getCorreo() + "\r\n");
+		fw4.write("Teléfono: " + user.getTelefono() + "\r\n");
+		fw4.write("----------------\r\n");
+		fw4.close();
+		break;
+		
+		default:
+			System.out.println("Introducir una opcion válida");
+		break;
+		}
 		System.out.println("\nUsuario dado de alta correctamente\n");
-				
+			
 		}
 				
 		catch(FileNotFoundException e) {
@@ -138,20 +132,17 @@ public class ListaUsuarios {
 			e.printStackTrace();	
 		}finally {
 			try {
-				if(bw1 != null & bw2 != null & bw3 != null & bw4 != null) {
-					bw1.close();
-					bw2.close();
-					bw3.close();
-					bw4.close();
-				}
-				if(fw1 != null & fw2 != null & fw3 != null & fw4 != null) {
+				if(fw1 != null) 
 					fw1.close();
+				else if(fw2 != null )
 					fw2.close();
+				else if(fw3 != null)
 					fw3.close();
+				else if(fw4 != null)
 					fw4.close();
-				}
-			}catch(IOException ex) {
-				ex.printStackTrace();
+				
+			}catch(IOException e) {
+				e.printStackTrace();
 			}
 		}	
 	}
@@ -159,8 +150,5 @@ public class ListaUsuarios {
 		for(int i=0; i<lUsuarios.size(); i++) {
 			lUsuarios.get(i).mostrarUsuarios();
 		}
-	}
-	
-	
-	
+	}	
 }

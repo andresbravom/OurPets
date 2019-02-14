@@ -8,9 +8,10 @@ public class User {
 	private String telefono;
 	private String cuenta;
 	private String zona;
-	private String accion;
+	private int accion;
+	
 
-	User( String nombre, String apellido, String correo, String dni, String direccion, String telefono, String cuenta, String zona, String accion){
+	User( String nombre, String apellido, String correo, String dni, String direccion, String telefono, String cuenta, String zona, int accion){
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.correo = correo;
@@ -29,6 +30,8 @@ public class User {
 		this.telefono = telefono;
 		this.zona = zona;	
 	}
+	
+	
 
 	public String getNombre() {
 		return nombre;
@@ -82,14 +85,14 @@ public class User {
 	public void setZona(String zona) {
 		this.zona = zona;
 	}
-	public String getAccion() {
+	public int getAccion() {
 		return accion;
 	}
 
-	public void setAccion(String accion) {
+	public void setAccion(int accion) {
 		this.accion = accion;
 	}
-	
+
 	void mostrarUsuarios() {
 		System.out.println("Nombre: " + nombre);
 		System.out.println("Apellido: " + apellido);
@@ -101,6 +104,7 @@ public class User {
 		System.out.println("Zona: " + zona);
 		System.out.println("Acción: " + zona);
 	}
-		
+	
+	
 }
 	

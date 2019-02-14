@@ -1,12 +1,12 @@
 Nombre: a
 Apellido: a
 Correo: a
-DNI: a
+DNI: 1
 Dirección: a
 Teléfono: a
-Cuenta: a
-Zona: a
-Acción: a
+Cuenta: 1
+Zona: 1
+Acción: 1
 ----------------
 Nombre: b
 Apellido: b
@@ -15,6 +15,56 @@ DNI: b
 Dirección: b
 Teléfono: b
 Cuenta: b
-Zona: b
-Acción: b
+Zona: 2
+Acción: 2
+----------------
+Nombre: c
+Apellido: c
+Correo: c
+DNI: 3
+Dirección: c
+Teléfono: c
+Cuenta: 3
+Zona: 3
+Acción: 3
+----------------
+Nombre: d
+Apellido: d
+Correo: d
+DNI: 1
+Dirección: d
+Teléfono: d
+Cuenta: 1
+Zona: 1
+Acción: 1
+----------------
+Nombre: Andres
+Apellido: a
+Correo: a
+DNI: 1
+Dirección: a
+Teléfono: a
+Cuenta: 1
+Zona: 1
+Acción: 1
+----------------
+Nombre: Laura
+Apellido: 2
+Correo: 2
+DNI: 2
+Dirección: 2
+Teléfono: 2
+Cuenta: 2
+Zona: 2
+Acción: 2
+----------------
+Nombre: Max
+Apellido: 3
+Correo: 3
+DNI: 3
+Dirección: 3
+Teléfono: 3
+Cuenta: 3
+Zona: 3
+Acción: 3
 ----------------
