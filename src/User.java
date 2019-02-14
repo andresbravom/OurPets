@@ -1,4 +1,3 @@
-
 public class User {
 	private String nombre;
 	private String apellido;
@@ -10,7 +9,6 @@ public class User {
 	private String zona;
 	private int accion;
 	
-
 	User( String nombre, String apellido, String correo, String dni, String direccion, String telefono, String cuenta, String zona, int accion){
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -31,8 +29,6 @@ public class User {
 		this.zona = zona;	
 	}
 	
-	
-
 	public String getNombre() {
 		return nombre;
 	}
@@ -103,8 +99,5 @@ public class User {
 		System.out.println("Cuenta: " + cuenta);
 		System.out.println("Zona: " + zona);
 		System.out.println("Acción: " + zona);
-	}
-	
-	
+	}	
 }
-	

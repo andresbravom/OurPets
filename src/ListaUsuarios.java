@@ -1,6 +1,8 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,7 +52,6 @@ public class ListaUsuarios {
 		FileWriter fw3 = null;
 		FileWriter fw4 = null;
 	
-		
 		try {
 		User user = createUser();
 		lUsuarios.add(user);
@@ -78,8 +79,12 @@ public class ListaUsuarios {
 		fw1.write("----------------\r\n");
 		fw1.close();
 		
+		
 		switch (user.getAccion()) {
 
+		/*
+		 * Fichero ADOPTAR
+		 */
 		case 1:
 		fw2 = new FileWriter(fileZona1Adoptar.getAbsoluteFile(), true);
 
@@ -92,6 +97,9 @@ public class ListaUsuarios {
 		
 		break;
 		
+		/*
+		 * Fichero APADRINAR
+		 */
 		case 2:
 		
 		fw3 = new FileWriter(fileZona1Apadrinar.getAbsoluteFile(), true);
@@ -105,10 +113,12 @@ public class ListaUsuarios {
 		fw3.close();
 		break;
 
+		/*
+		 * Fichero PASEAR
+		 */
 		case 3:
 		
 		fw4 = new FileWriter(fileZona1Pasear.getAbsoluteFile(), true);
-		
 		
 		fw4.write("Nombre: " + user.getNombre() + "\r\n");
 		fw4.write("Apellido: " + user.getApellido() + "\r\n");
@@ -124,8 +134,7 @@ public class ListaUsuarios {
 		}
 		System.out.println("\nUsuario dado de alta correctamente\n");
 			
-		}
-				
+		}		
 		catch(FileNotFoundException e) {
 			e.printStackTrace();
 		}catch(IOException e) {
@@ -149,6 +158,28 @@ public class ListaUsuarios {
 	void mostrarTodosUsuarios() {
 		for(int i=0; i<lUsuarios.size(); i++) {
 			lUsuarios.get(i).mostrarUsuarios();
+		}
+	}	
+		void mostrarListaGeneral() {
+			BufferedReader br =null;
+			
+			try {
+				String currentLine;
+				br = new BufferedReader(new FileReader("./Usuarios.txt"));
+				while((currentLine = br.readLine()) != null) {
+					System.out.println(currentLine);
+				}
+			}catch(IOException e) {
+				e.printStackTrace();
+			}finally {
+				try {
+					if(br != null) {
+						br.close();
+					}
+				}catch(IOException ex) {
+					ex.printStackTrace();
+				
+			}
 		}
 	}	
 }

@@ -1,9 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Admins {
 	private String usuario;
 	private String contraseña;
-	private ArrayList<Admins> listaAdmins = new ArrayList<Admins>();
+	static ArrayList<Admins> listaAdmins = new ArrayList<Admins>();
 	static Admins actualAdmin;
 	
 	Admins (String usuario, String contraseña){
@@ -35,7 +38,7 @@ public class Admins {
 		this.listaAdmins = listaAdmins;
 	}
 	
-	boolean authentication(String usuario, String contraseña) {
+	static boolean authentication(String usuario, String contraseña) {
 		boolean login = false;
 		
 		for(int i =0; i<listaAdmins.size(); i++) {
@@ -47,5 +50,7 @@ public class Admins {
 		}
 		return login;
 	}
+	
+
 	
 }
