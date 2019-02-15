@@ -10,6 +10,7 @@ public class General extends Application{
 	static Stage stageInicio;
 	static Stage stageLogin;
 	static Stage stageOptionAdmin;
+	static Stage stageReadFileGeneral;
 	static Stage stageAddUsers1;
 	
 	
@@ -41,11 +42,18 @@ public class General extends Application{
 			stageAddUsers1.setScene(sceneAddUser1);
 			
 			stageOptionAdmin = new Stage();
-			URL optionAdmin = getClass().getClassLoader().getResource("ListadoUsuarios.fxml");
+			URL optionAdmin = getClass().getClassLoader().getResource("OpcionesAdmin.fxml");
 			Parent rootOptionAdmin = FXMLLoader.load(optionAdmin);
 			Scene sceneOptionAdmin = new Scene(rootOptionAdmin);
 			stageOptionAdmin.setTitle("optionAdmin");
 			stageOptionAdmin.setScene(sceneOptionAdmin);
+			
+			stageReadFileGeneral = new Stage();
+			URL readFileGeneral = getClass().getClassLoader().getResource("ListadoGeneral.fxml");
+			Parent rootReadFileGeneral = FXMLLoader.load(readFileGeneral);
+			Scene scenereadFileGeneral = new Scene(rootReadFileGeneral);
+			stageReadFileGeneral.setTitle("readFileGeneral");
+			stageReadFileGeneral.setScene(scenereadFileGeneral);
 	
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -23,8 +27,13 @@ public class ControllerOptionAdmin {
 
     @FXML
     void showListAdopt(ActionEvent event) {
-
+    	
+    	General.stageOptionAdmin.close();
+    	General.stageReadFileGeneral.show();
+    	
     }
+
+    
 
     @FXML
     void showListApadrinar(ActionEvent event) {
