@@ -21,11 +21,24 @@ public class ControllerLogin {
     @FXML
     void exit(ActionEvent event) {
     	
+    	General.stageLogin.close();
+    	General.stageInicio.show();
     }
 
     @FXML
     void login(ActionEvent event) {
 
+    	String textUsername = username.getText();
+    	String textPassword = password.getText();
+    	
+    	if(Admins.authentication(textUsername, textPassword)) {
+    		General.stageLogin.close();
+    		General.stageOptionAdmin.show();
+    	}
+    	else {
+    		username.clear();
+    		password.clear();
+    	}
     }
 
 }

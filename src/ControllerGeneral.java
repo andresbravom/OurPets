@@ -27,7 +27,7 @@ public class ControllerGeneral  {
     @FXML
     void LoginUsers(ActionEvent event) {
     	General.stageInicio.close();
-    	General.stageLogin.show();
+    	General.stageAddUsers1.show();
     }
 
 }

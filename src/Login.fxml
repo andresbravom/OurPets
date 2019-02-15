@@ -26,13 +26,13 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="username" layoutX="261.0" layoutY="280.0" prefHeight="27.0" prefWidth="178.0" />
+      <TextField fx:id="username" alignment="CENTER" layoutX="261.0" layoutY="280.0" prefHeight="27.0" prefWidth="178.0" />
       <Label layoutX="125.0" layoutY="318.0" prefHeight="20.0" prefWidth="122.0" text="CONTRASEÑA">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password" layoutX="261.0" layoutY="314.0" prefHeight="27.0" prefWidth="178.0" />
+      <PasswordField fx:id="password" alignment="CENTER" layoutX="261.0" layoutY="314.0" prefHeight="27.0" prefWidth="178.0" />
       <Button fx:id="buttonLogin" layoutX="491.0" layoutY="348.0" mnemonicParsing="false" onAction="#login" text="ENTRAR" />
       <Button fx:id="buttonExit" layoutX="45.0" layoutY="348.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
    </children>
