@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerGeneral">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="30.0" layoutY="12.0" prefHeight="134.0" prefWidth="200.0" text="Label" />
+      <Label alignment="CENTER" layoutX="150.0" layoutY="47.0" prefHeight="48.0" prefWidth="329.0" text="Our - PETS" textFill="#c809e3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="198.0" fitWidth="214.0" layoutX="213.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ourpets1.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Administradores" layoutX="121.0" layoutY="313.0" mnemonicParsing="false" onAction="#EnterToAdmins" text="ADMINISTRADORES" />
+      <Button fx:id="Usuarios" layoutX="407.0" layoutY="313.0" mnemonicParsing="false" onAction="#LoginUsers" text="DARSE DE ALTA" />
+      <Button fx:id="Salir" layoutX="48.0" layoutY="358.0" mnemonicParsing="false" onAction="#Exit" text="SALIR" />
    </children>
-</VBox>
+</Pane>

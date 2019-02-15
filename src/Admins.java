@@ -37,7 +37,9 @@ public class Admins {
 	public void setListaAdmins(ArrayList<Admins> listaAdmins) {
 		this.listaAdmins = listaAdmins;
 	}
-	
+	/*
+	 * Autenticación de los admins
+	 */
 	static boolean authentication(String usuario, String contraseña) {
 		boolean login = false;
 		
@@ -49,8 +51,5 @@ public class Admins {
 			}
 		}
 		return login;
-	}
-	
-
-	
+	}	
 }

@@ -22,7 +22,9 @@ public class ListaUsuarios {
 	static User actualUser;
 	
 	Scanner sc = new Scanner(System.in);
-	
+	/*
+	 * Captura los datos del usuario
+	 */
 	private User createUser() {
 		System.out.println("Introducir un nombre: ");
 		String nombre = sc.nextLine();
@@ -41,11 +43,13 @@ public class ListaUsuarios {
 		System.out.println("Introduzca el número de zona: ");
 		String zona = sc.nextLine();
 		System.out.println("Elegir una acción: ");
-		int accion = sc.nextInt();
+		String accion = sc.nextLine();
 		
 		return new User(nombre, apellido, correo, dni, direccion, telefono, cuenta, zona, accion);
 	}
-	
+	/*
+	 * Añade un usuario a la lista
+	 */
 	void addUser() {
 		FileWriter fw1 = null;
 		FileWriter fw2 = null;
@@ -62,7 +66,7 @@ public class ListaUsuarios {
 		File fileZona1Pasear = new File ("./PasearZona1.txt");
 		
 		/*
-		 * FICHERO GENERAL
+		 * Fichero GENERAL(Se guarda por defecto)
 		 */
 		
 		fw1 = new FileWriter(fileGeneral.getAbsoluteFile(), true);
@@ -83,9 +87,9 @@ public class ListaUsuarios {
 		switch (user.getAccion()) {
 
 		/*
-		 * Fichero ADOPTAR
+		 * Opcion1: Se almacenan los datos en el Fichero ADOPTAR
 		 */
-		case 1:
+		case "1":
 		fw2 = new FileWriter(fileZona1Adoptar.getAbsoluteFile(), true);
 
 		fw2.write("Nombre: " + user.getNombre() + "\r\n");
@@ -98,9 +102,9 @@ public class ListaUsuarios {
 		break;
 		
 		/*
-		 * Fichero APADRINAR
+		 * Opcion2: Se almacenan los datos en el Fichero APADRINAR
 		 */
-		case 2:
+		case "2":
 		
 		fw3 = new FileWriter(fileZona1Apadrinar.getAbsoluteFile(), true);
 		
@@ -114,9 +118,9 @@ public class ListaUsuarios {
 		break;
 
 		/*
-		 * Fichero PASEAR
+		 * Opcion3: Se almacenan los datos en el Fichero PASEAR
 		 */
-		case 3:
+		case "3":
 		
 		fw4 = new FileWriter(fileZona1Pasear.getAbsoluteFile(), true);
 		
@@ -155,31 +159,95 @@ public class ListaUsuarios {
 			}
 		}	
 	}
+	/*
+	 * Este método permite que el usuario visualice los datos que ha introducido tras haberse dado de alta
+	 */
 	void mostrarTodosUsuarios() {
 		for(int i=0; i<lUsuarios.size(); i++) {
 			lUsuarios.get(i).mostrarUsuarios();
 		}
 	}	
-		void mostrarListaGeneral() {
-			BufferedReader br =null;
-			
+	/*
+	 * Muestra al ADMNINMASTER el listado general de los usuarios con todos los datos requeridos
+	 * al haberse dado de alta. Sólo hay un ADMNINMASTER
+	 */
+	void mostrarListaGeneral() {
+		BufferedReader br = null;
+		
+		try {
+			String currentLine;
+			br = new BufferedReader(new FileReader("./Usuarios.txt"));
+			while((currentLine = br.readLine()) != null) {
+				System.out.println(currentLine);
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
 			try {
-				String currentLine;
-				br = new BufferedReader(new FileReader("./Usuarios.txt"));
+				if(br != null) {
+					br.close();
+				}
+			}catch(IOException ex) {
+				ex.printStackTrace();
+			
+			}
+		}
+	}
+	/*
+	 * Muestra los listados dependiendo de la acción del usuario, esto esta visible
+	 * sólo para los admins regustrados. Se ha dado de alta a 3 ADMINS
+	 */
+	void mostrarListados() {
+		BufferedReader br = null;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		try {
+			String currentLine;
+			System.out.println("Elegir un opción");
+			String option = sc.nextLine();
+			
+			switch(option) {
+			/*
+			 * FICHERO ADOPTAR
+			 */
+			case "1":
+				br = new BufferedReader(new FileReader("./AdoptarZona1.txt"));
+				while((currentLine = br.readLine()) != null) {
+					System.out.println(currentLine);	
+				}
+				break;
+			/*
+			 * FICHERO APADRINAR
+			 */
+			case "2":
+				br = new BufferedReader(new FileReader("./ApadrinarZona1.txt"));
 				while((currentLine = br.readLine()) != null) {
 					System.out.println(currentLine);
 				}
+				break;
+			/*
+			 * FICHERO PASEAR
+			 */
+			case "3":
+				br = new BufferedReader(new FileReader("./PasearZona1.txt"));
+				while((currentLine = br.readLine()) != null) {
+					System.out.println(currentLine);	
+				}
+				break;
+			default:
+				break;
+			}
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(br != null) {
+					br.close();
+				}		
 			}catch(IOException e) {
 				e.printStackTrace();
-			}finally {
-				try {
-					if(br != null) {
-						br.close();
-					}
-				}catch(IOException ex) {
-					ex.printStackTrace();
-				
 			}
 		}
-	}	
+	}
 }

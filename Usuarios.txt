@@ -68,3 +68,33 @@ Cuenta: 3
 Zona: 3
 Acción: 3
 ----------------
+Nombre: 1
+Apellido: 1
+Correo: 1
+DNI: 1
+Dirección: 1
+Teléfono: 1
+Cuenta: 1
+Zona: null
+Acción: null
+----------------
+Nombre: 2
+Apellido: 2
+Correo: 2
+DNI: 2
+Dirección: 2
+Teléfono: 2
+Cuenta: 2
+Zona: null
+Acción: null
+----------------
+Nombre: 
+Apellido: 
+Correo: 
+DNI: 
+Dirección: 
+Teléfono: 
+Cuenta: 
+Zona: 
+Acción: 
+----------------
