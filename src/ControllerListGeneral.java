@@ -30,8 +30,6 @@ public class ControllerListGeneral {
 
     @FXML
     void listGeneral(ActionEvent event) {
-    	
-    	
     	    try {
     	        Scanner s = new Scanner(new File("./Usuarios.txt")).useDelimiter("\r\n");
     	        while (s.hasNext()) {
