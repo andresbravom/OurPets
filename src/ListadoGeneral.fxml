@@ -22,7 +22,7 @@
       </ImageView>
       <Button fx:id="buttonExit" layoutX="36.0" layoutY="361.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
       <TextArea fx:id="listGeneral" layoutX="169.0" layoutY="161.0" prefHeight="200.0" prefWidth="279.0" />
-      <Label layoutX="221.0" layoutY="97.0" prefHeight="23.0" prefWidth="200.0" text="LISTA DE USUARIOS">
+      <Label layoutX="160.0" layoutY="97.0" prefHeight="23.0" prefWidth="297.0" text="LISTADO GENERAL DE USUARIOS" textFill="#0090ff">
          <font>
             <Font size="18.0" />
          </font>

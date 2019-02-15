@@ -26,6 +26,8 @@ public class ControllerListGeneral {
     @FXML
     void exit(ActionEvent event) {
 
+    	General.stageReadFileGeneral.close();
+    	General.stageOptionAdmin.show();
     }
 
     @FXML

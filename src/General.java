@@ -10,6 +10,7 @@ public class General extends Application{
 	static Stage stageInicio;
 	static Stage stageLogin;
 	static Stage stageOptionAdmin;
+	static Stage stageAutenticationSuperUser;
 	static Stage stageReadFileGeneral;
 	static Stage stageAddUsers1;
 	
@@ -54,6 +55,13 @@ public class General extends Application{
 			Scene scenereadFileGeneral = new Scene(rootReadFileGeneral);
 			stageReadFileGeneral.setTitle("readFileGeneral");
 			stageReadFileGeneral.setScene(scenereadFileGeneral);
+			
+			stageAutenticationSuperUser = new Stage();
+			URL autenticationSuperUser = getClass().getClassLoader().getResource("loginSuperUser.fxml");
+			Parent rootAutenticationSuperUser = FXMLLoader.load(autenticationSuperUser);
+			Scene sceneAutenticationSuperUser = new Scene(rootAutenticationSuperUser);
+			stageAutenticationSuperUser.setTitle("autenticationSuperUser");
+			stageAutenticationSuperUser.setScene(sceneAutenticationSuperUser);
 	
 		}catch(Exception e) {
 			e.printStackTrace();

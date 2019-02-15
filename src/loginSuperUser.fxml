@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerSuperUser">
+   <children>
+      <Label alignment="CENTER" layoutX="145.0" layoutY="31.0" prefHeight="48.0" prefWidth="329.0" text="Our - PETS" textFill="#c809e3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="198.0" fitWidth="214.0" layoutX="213.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ourpets1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="155.0" layoutY="294.0" prefHeight="20.0" prefWidth="82.0" text="USUARIO">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" alignment="CENTER" layoutX="271.0" layoutY="290.0" prefHeight="27.0" prefWidth="178.0" />
+      <Label layoutX="135.0" layoutY="328.0" prefHeight="20.0" prefWidth="122.0" text="CONTRASEÑA">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="password" alignment="CENTER" layoutX="271.0" layoutY="324.0" prefHeight="27.0" prefWidth="178.0" />
+      <Button fx:id="buttonLogin" layoutX="501.0" layoutY="358.0" mnemonicParsing="false" onAction="#login" text="ENTRAR" />
+      <Button fx:id="buttonExit" layoutX="55.0" layoutY="358.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
+   </children>
+</Pane>

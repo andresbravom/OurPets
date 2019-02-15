@@ -43,5 +43,6 @@
             <Image url="@Pasear.png" />
          </image>
       </ImageView>
+      <Button fx:id="buttonShowListGeneral" layoutX="479.0" layoutY="340.0" mnemonicParsing="false" onAction="#listGeneral" text="LISTA GENERAL" />
    </children>
 </Pane>
