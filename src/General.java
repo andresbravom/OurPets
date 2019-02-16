@@ -16,7 +16,8 @@ public class General extends Application{
 	static Stage stageReadFileApadrinar;
 	static Stage stageReadFilePasear;
 	static Stage stageAddUsers1;
-	
+	static Stage stageAddUsers2;
+	static Stage stageOptionUser;
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -37,13 +38,6 @@ public class General extends Application{
 			Scene sceneLogin = new Scene(rootLogin);
 			stageLogin.setTitle("Login");
 			stageLogin.setScene(sceneLogin);
-			
-			stageAddUsers1 = new Stage();
-			URL addUser1 = getClass().getClassLoader().getResource("RegistroUsuario1.fxml");
-			Parent rootAddUser1 = FXMLLoader.load(addUser1);
-			Scene sceneAddUser1 = new Scene(rootAddUser1);
-			stageAddUsers1.setTitle("addUser1");
-			stageAddUsers1.setScene(sceneAddUser1);
 			
 			stageOptionAdmin = new Stage();
 			URL optionAdmin = getClass().getClassLoader().getResource("OpcionesAdmin.fxml");
@@ -81,11 +75,33 @@ public class General extends Application{
 			stageReadFileApadrinar.setScene(sceneReadFileApadrinar);
 			
 			stageReadFilePasear = new Stage();
-			URL readFilePasear =getClass().getClassLoader().getResource("listPasear.fxml");
+			URL readFilePasear = getClass().getClassLoader().getResource("listPasear.fxml");
 			Parent rootReadFilePasear = FXMLLoader.load(readFilePasear);
 			Scene sceneReadFilePasear = new Scene(rootReadFilePasear);
 			stageReadFilePasear.setTitle("readFilePasear");
 			stageReadFilePasear.setScene(sceneReadFilePasear);
+		
+			stageAddUsers1 = new Stage();
+			URL addUser1 = getClass().getClassLoader().getResource("RegistroUsuario1.fxml");
+			Parent rootAddUser1 = FXMLLoader.load(addUser1);
+			Scene sceneAddUser1 = new Scene(rootAddUser1);
+			stageAddUsers1.setTitle("addUser1");
+			stageAddUsers1.setScene(sceneAddUser1);
+			
+			stageAddUsers2 = new Stage();
+			URL addUsers2 = getClass().getClassLoader().getResource("RegistroUsuario2.fxml");
+			Parent rootAddUsers2 = FXMLLoader.load(addUsers2);
+			Scene sceneAddUsers2 = new Scene(rootAddUsers2);
+			stageAddUsers2.setTitle("addUsers2");
+			stageAddUsers2.setScene(sceneAddUsers2);
+			
+			stageOptionUser = new Stage();
+			URL optionUser = getClass().getClassLoader().getResource("OpcionesUsuario.fxml");
+			Parent rootOptionUser = FXMLLoader.load(optionUser);
+			Scene sceneOptionUser = new Scene(rootOptionUser);
+			stageOptionUser.setTitle("optionUser");
+			stageOptionUser.setScene(sceneOptionUser);
+			
 	
 		}catch(Exception e) {
 			e.printStackTrace();
