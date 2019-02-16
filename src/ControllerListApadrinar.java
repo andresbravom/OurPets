@@ -1,10 +1,5 @@
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 import javafx.event.ActionEvent;
@@ -12,38 +7,39 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-public class ControllerListGeneral {
+public class ControllerListApadrinar {
 
     @FXML
     private Button buttonExit;
 
     @FXML
-    private TextArea listGeneral;
+    private TextArea listApadrinar;
 
     @FXML
-    private Button bottonListGeneral;
+    private Button bottonListApadrinar;
 
     @FXML
     void exit(ActionEvent event) {
-
-    	General.stageReadFileGeneral.close();
+    	listApadrinar.clear();
+    	General.stageReadFileAdoptar.close();
     	General.stageOptionAdmin.show();
     }
 
     @FXML
-    void listGeneral(ActionEvent event) {
+    void listApadrinar(ActionEvent event) {
+
     	try {
-	        Scanner s = new Scanner(new File("./Usuarios.txt")).useDelimiter("\r\n");
+	        Scanner s = new Scanner(new File("./ApadrinarZona1.txt")).useDelimiter("\r\n");
 	        while (s.hasNext()) {
 	            if (s.hasNextInt()) { // check if next token is an int
-	            	listGeneral.appendText(s.nextInt() + "\r\n"); // display the found integer
+	            	listApadrinar.appendText(s.nextInt() + "\r\n"); // display the found integer
 	            } else {
-	            	listGeneral.appendText(s.next() + "\r\n"); // else read the next token
+	            	listApadrinar.appendText(s.next() + "\r\n"); // else read the next token
 	            }
 	        }
 	    } catch (FileNotFoundException ex) {
 	        System.err.println(ex);
 	    }
-	}
-      
+    }
+
 }

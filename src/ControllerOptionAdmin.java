@@ -21,6 +21,8 @@ public class ControllerOptionAdmin {
 
     @FXML
     void exit(ActionEvent event) {
+    	General.stageOptionAdmin.close();
+    	General.stageInicio.show();
 
     }
 
@@ -33,17 +35,23 @@ public class ControllerOptionAdmin {
 
     @FXML
     void showListAdopt(ActionEvent event) {
+    	General.stageOptionAdmin.close();
+    	General.stageReadFileAdoptar.show();
 
     }
 
     @FXML
     void showListApadrinar(ActionEvent event) {
-
+    	General.stageOptionAdmin.close();
+    	General.stageReadFileApadrinar.show();
+    	
     }
 
     @FXML
     void showListPasear(ActionEvent event) {
-
+    	General.stageOptionAdmin.close();
+    	General.stageReadFilePasear.show();
+    	
     }
 
 }

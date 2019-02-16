@@ -12,6 +12,9 @@ public class General extends Application{
 	static Stage stageOptionAdmin;
 	static Stage stageAutenticationSuperUser;
 	static Stage stageReadFileGeneral;
+	static Stage stageReadFileAdoptar;
+	static Stage stageReadFileApadrinar;
+	static Stage stageReadFilePasear;
 	static Stage stageAddUsers1;
 	
 	
@@ -62,6 +65,27 @@ public class General extends Application{
 			Scene sceneAutenticationSuperUser = new Scene(rootAutenticationSuperUser);
 			stageAutenticationSuperUser.setTitle("autenticationSuperUser");
 			stageAutenticationSuperUser.setScene(sceneAutenticationSuperUser);
+			
+			stageReadFileAdoptar = new Stage();
+			URL readFileAdoptar = getClass().getClassLoader().getResource("listAdopt.fxml");
+			Parent rooteRadFileAdoptar = FXMLLoader.load(readFileAdoptar);
+			Scene sceneReadFileAdoptar = new Scene(rooteRadFileAdoptar);
+			stageReadFileAdoptar.setTitle("readFileAdoptar");
+			stageReadFileAdoptar.setScene(sceneReadFileAdoptar);
+			
+			stageReadFileApadrinar = new Stage();
+			URL readFileApadrinar = getClass().getClassLoader().getResource("listApadrinar.fxml");
+			Parent rootReadFileApadrinar = FXMLLoader.load(readFileApadrinar);
+			Scene sceneReadFileApadrinar = new Scene(rootReadFileApadrinar );
+			stageReadFileApadrinar.setTitle("readFileApadrinar");
+			stageReadFileApadrinar.setScene(sceneReadFileApadrinar);
+			
+			stageReadFilePasear = new Stage();
+			URL readFilePasear =getClass().getClassLoader().getResource("listPasear.fxml");
+			Parent rootReadFilePasear = FXMLLoader.load(readFilePasear);
+			Scene sceneReadFilePasear = new Scene(rootReadFilePasear);
+			stageReadFilePasear.setTitle("readFilePasear");
+			stageReadFilePasear.setScene(sceneReadFilePasear);
 	
 		}catch(Exception e) {
 			e.printStackTrace();
