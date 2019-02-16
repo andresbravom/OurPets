@@ -5,13 +5,13 @@ import java.util.ArrayList;
 
 public class Admins {
 	private String usuario;
-	private String contraseña;
+	private String password;
 	static ArrayList<Admins> listaAdmins = new ArrayList<Admins>();
 	static Admins actualAdmin;
 	
-	Admins (String usuario, String contraseña){
+	Admins (String usuario, String password){
 		this.usuario = usuario;
-		this.contraseña = contraseña;
+		this.password = password;
 		listaAdmins.add(this);
 	}
 
@@ -24,11 +24,11 @@ public class Admins {
 	}
 
 	public String getContraseña() {
-		return contraseña;
+		return password;
 	}
 
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setContraseña(String password) {
+		this.password = password;
 	}
 	public ArrayList<Admins> getListaAdmins() {
 		return listaAdmins;
@@ -40,11 +40,11 @@ public class Admins {
 	/*
 	 * Autenticación de los admins
 	 */
-	static boolean authentication(String usuario, String contraseña) {
+	static boolean authentication(String usuario, String password) {
 		boolean login = false;
 		
 		for(int i =0; i<listaAdmins.size(); i++) {
-			if(usuario.equals(listaAdmins.get(i).getUsuario()) && contraseña.equals(listaAdmins.get(i).getContraseña())) {
+			if(usuario.equals(listaAdmins.get(i).getUsuario()) && password.equals(listaAdmins.get(i).getContraseña())) {
 				login =true;
 				actualAdmin = listaAdmins.get(i);
 				break;
