@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 
 public class ControllerAddUser1 {
 
+
     @FXML
     private Button buttonNext;
 
@@ -12,28 +13,47 @@ public class ControllerAddUser1 {
     private Button buttonExit;
 
     @FXML
-    private TextField nombre;
+    private TextField textNombre;
+
+   
+
+	public String getTextNombre() {
+		return textNombre.getText();
+	}
+
+	public void setTextNombre(TextField textNombre) {
+		this.textNombre = textNombre;
+	}
+
+	@FXML
+    private TextField textApellidos;
 
     @FXML
-    private TextField apellidos;
+    private TextField textDni;
 
     @FXML
-    private TextField dni;
-
-    @FXML
-    private TextField correoElectronico;
+    private TextField textCorreoElectronico;
 
     @FXML
     void exit(ActionEvent event) {
 
     	General.stageAddUsers1.close();
     	General.stageInicio.show();
+    	
+   
     }
 
     @FXML
     void next(ActionEvent event) {
-
+    	General.stageAddUsers1.close();
+    	General.stageAddUsers2.show();
+    	
     }
 
 }
 
+    	
+    
+
+
+    

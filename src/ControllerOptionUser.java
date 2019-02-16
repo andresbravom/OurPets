@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class ControllerOptionUser {
+	ControllerAddUser1 prueba = new  ControllerAddUser1();
 
     @FXML
     private Button buttonExit;
@@ -33,7 +34,10 @@ public class ControllerOptionUser {
 
     @FXML
     void writeFileAdopt(ActionEvent event) {
-
+    	
+    	 prueba.getTextNombre();
+    	 System.out.println(prueba.getTextNombre());
+    	
     }
 
     @FXML
