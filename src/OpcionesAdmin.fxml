@@ -4,45 +4,50 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOptionAdmin">
+<HBox alignment="CENTER" prefHeight="600.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerOptionAdmin">
    <children>
-      <Label alignment="CENTER" layoutX="145.0" layoutY="54.0" prefHeight="48.0" prefWidth="329.0" text="Our - PETS" textFill="#c809e3">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="107.0" fitWidth="85.0" layoutX="493.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@ourpets1.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="buttonExit" layoutX="43.0" layoutY="340.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
-      <Label layoutX="167.0" layoutY="96.0" prefHeight="34.0" prefWidth="286.0" text="¿QUÉ LISTA DESEA CONSULTAR" textFill="#326fa4">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="bottonAdoptar" layoutX="70.0" layoutY="276.0" mnemonicParsing="false" onAction="#showListAdopt" text="ADOPTAR" />
-      <Button fx:id="bottonApadrinar" layoutX="263.0" layoutY="276.0" mnemonicParsing="false" onAction="#showListApadrinar" text="APADRINAR" />
-      <Button fx:id="bottonPasear" layoutX="474.0" layoutY="276.0" mnemonicParsing="false" onAction="#showListPasear" text="PASEAR" />
-      <ImageView fitHeight="135.0" fitWidth="149.0" layoutX="43.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Adoptar.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="135.0" fitWidth="128.0" layoutX="270.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Apadrinar.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="135.0" fitWidth="149.0" layoutX="429.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Pasear.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="buttonShowListGeneral" layoutX="479.0" layoutY="340.0" mnemonicParsing="false" onAction="#listGeneral" text="LISTA GENERAL" />
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="749.0">
+         <children>
+            <Label alignment="CENTER" layoutX="210.0" layoutY="64.0" prefHeight="48.0" prefWidth="329.0" text="Our - PETS" textFill="#c809e3">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="107.0" fitWidth="85.0" layoutX="615.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ourpets1.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonExit" layoutX="43.0" layoutY="479.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
+            <Label layoutX="232.0" layoutY="123.0" prefHeight="34.0" prefWidth="286.0" text="¿QUÉ LISTA DESEA CONSULTAR" textFill="#326fa4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="bottonAdoptar" layoutX="131.0" layoutY="360.0" mnemonicParsing="false" onAction="#showListAdopt" text="ADOPTAR" />
+            <Button fx:id="bottonApadrinar" layoutX="345.0" layoutY="360.0" mnemonicParsing="false" onAction="#showListApadrinar" text="APADRINAR" />
+            <Button fx:id="bottonPasear" layoutX="586.0" layoutY="360.0" mnemonicParsing="false" onAction="#showListPasear" text="PASEAR" />
+            <ImageView fitHeight="135.0" fitWidth="149.0" layoutX="104.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Adoptar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="135.0" fitWidth="128.0" layoutX="352.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Apadrinar.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="135.0" fitWidth="149.0" layoutX="541.0" layoutY="214.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pasear.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonShowListGeneral" layoutX="599.0" layoutY="479.0" mnemonicParsing="false" onAction="#listGeneral" text="LISTA GENERAL" />
+         </children>
+      </Pane>
    </children>
-</Pane>
+</HBox>

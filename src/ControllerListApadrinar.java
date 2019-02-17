@@ -21,7 +21,7 @@ public class ControllerListApadrinar {
     @FXML
     void exit(ActionEvent event) {
     	listApadrinar.clear();
-    	General.stageReadFileAdoptar.close();
+    	General.stageReadFileApadrinar.close();
     	General.stageOptionAdmin.show();
     }
 

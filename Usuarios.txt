@@ -98,3 +98,23 @@ Cuenta:
 Zona: 
 Acción: 
 ----------------
+Nombre: LAURA
+Apellidos: RODRIGUEZ
+Correo: PAQUITA@
+DNI: 1234567
+Direccion: VK
+Telefono: 6666666666
+Cuenta: 123456789876543W2
+Zona: VK
+Accion: ADOPTAR
+----------------
+Nombre: AAAAA
+Apellidos: AAAA
+Correo: AAAA
+DNI: AAAA
+Direccion: AAA
+Telefono: AAAA
+Cuenta: AAAAA
+Zona: AAAA
+Accion: PASEAR
+----------------

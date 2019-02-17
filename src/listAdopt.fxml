@@ -5,28 +5,33 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListAdopt">
+<HBox alignment="CENTER" prefHeight="600.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListAdopt">
    <children>
-      <Label alignment="CENTER" layoutX="122.0" layoutY="47.0" prefHeight="48.0" prefWidth="329.0" text="Our - PETS" textFill="#c809e3">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="107.0" fitWidth="85.0" layoutX="470.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@ourpets1.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="buttonExit" layoutX="14.0" layoutY="359.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
-      <TextArea fx:id="listAdopt" layoutX="147.0" layoutY="159.0" prefHeight="200.0" prefWidth="279.0" />
-      <Label layoutX="199.0" layoutY="95.0" prefHeight="23.0" prefWidth="175.0" text="LISTADO ADOPTAR" textFill="#0090ff">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="bottonListAdopt" layoutX="227.0" layoutY="132.0" mnemonicParsing="false" onAction="#listAdopt" text="Mostar Usuarios" />
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="749.0">
+         <children>
+            <Label alignment="CENTER" layoutX="210.0" layoutY="48.0" prefHeight="48.0" prefWidth="329.0" text="Our - PETS" textFill="#c809e3">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="107.0" fitWidth="85.0" layoutX="617.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ourpets1.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonExit" layoutX="26.0" layoutY="538.0" mnemonicParsing="false" onAction="#exit" text="SALIR" />
+            <TextArea fx:id="listAdopt" layoutX="156.0" layoutY="186.0" prefHeight="358.0" prefWidth="425.0" />
+            <Label layoutX="287.0" layoutY="96.0" prefHeight="23.0" prefWidth="175.0" text="LISTADO ADOPTAR" textFill="#0090ff">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="bottonListAdopt" layoutX="309.0" layoutY="141.0" mnemonicParsing="false" onAction="#listAdopt" text="Mostar Usuarios" />
+         </children>
+      </Pane>
    </children>
-</Pane>
+</HBox>

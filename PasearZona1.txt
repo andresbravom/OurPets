@@ -8,3 +8,8 @@ Apellido: 3
 Correo: 3
 Teléfono: 3
 ----------------
+Nombre: AAAAA
+Apellidos: AAAA
+Correo: AAAA
+Telefono: AAAA
+----------------

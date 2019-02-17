@@ -22,7 +22,7 @@ public class ControllerListPasear {
     void exit(ActionEvent event) {
 
     	listPasear.clear();
-    	General.stageReadFileAdoptar.close();
+    	General.stageReadFilePasear.close();
     	General.stageOptionAdmin.show();
     }
 
