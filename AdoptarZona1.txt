@@ -18,3 +18,8 @@ Apellidos: RODRIGUEZ
 Correo: PAQUITA@
 Telefono: 6666666666
 ----------------
+Nombre: luis
+Apellidos: fg
+Correo: liudsaa
+Telefono: 23456
+----------------

@@ -118,3 +118,13 @@ Cuenta: AAAAA
 Zona: AAAA
 Accion: PASEAR
 ----------------
+Nombre: luis
+Apellidos: fg
+Correo: liudsaa
+DNI: 12345
+Direccion: wertgyhuji
+Telefono: 23456
+Cuenta: 1234567890
+Zona: 1
+Accion: ADOPTAR
+----------------
