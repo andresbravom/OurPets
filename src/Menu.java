@@ -15,8 +15,4 @@ public class Menu {
 		System.out.println("\nOpción1: FICHERO PASEAR");
 	}
 }
-//Crear esqueleton java fx
-//Crear controladores y escenas
-//configurar el login 
-//Realizar test 
-//Leer de ficheros
+
